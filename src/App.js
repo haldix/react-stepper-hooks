@@ -16,21 +16,19 @@ function App() {
 
   return (
     <>
-      <div className='stepper-container-vertical'>
+      <div className='stepper-container vertical'>
         <Stepper
-          direction='vertical'
+          direction='horiz'
           currentStep={currentStep}
           stepsData={stepsArray}
         />
       </div>
 
-      <div className='stepper-container-horizontal'>
-        <Stepper
-          direction='horizontal'
-          currentStep={currentStep}
-          stepsData={stepsArray}
-        />
-      </div>
+      <Stepper
+        direction='vert'
+        currentStep={currentStep}
+        stepsData={stepsArray}
+      />
 
       <div className='buttons-container'>
         <button onClick={() => handleClick()}>Previous</button>
@@ -43,9 +41,10 @@ function App() {
 export default App;
 
 const stepsArray = [
-  // "Create your account",
+  'Create your account',
   'Add personal info',
   'Add payment details',
   'Complete registration',
   'Registration complete',
+  'Login',
 ];
