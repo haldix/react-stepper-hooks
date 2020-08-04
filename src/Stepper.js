@@ -19,8 +19,8 @@ const Stepper = (props) => {
   const stepsJSX = steps.map(({ current, past, description }, idx) => {
     return (
       <li className='step-cont' key={idx}>
-        {current && <span class='sr-only'>current</span>}
-        {past && <span class='sr-only'>completed</span>}
+        {current && <span className='sr-only'>current</span>}
+        {past && <span className='sr-only'>completed</span>}
         <div className='step'>
           <div
             className={`step__number ${
