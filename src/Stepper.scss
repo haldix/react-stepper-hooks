@@ -6,8 +6,18 @@ $step-size: 3rem;
   justify-content: center;
 }
 
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .container {
   display: inline-block;
+  list-style: none;
   background-color: #f1f1f1;
   padding: 1.5rem;
   border: 1px solid gray;

@@ -18,18 +18,20 @@ const Stepper = (props) => {
 
   const stepsJSX = steps.map(({ current, past, description }, idx) => {
     return (
-      <div className='step-cont' key={idx}>
+      <li className='step-cont' key={idx}>
+        {current && <span class='sr-only'>current</span>}
+        {past && <span class='sr-only'>completed</span>}
         <div className='step'>
           <div
             className={`step__number ${
-              current || past ? 'step__number-selected' : null
+              current || past ? 'step__number-selected' : ''
             }`}
           >
             {past ? <span>&#10003;</span> : idx + 1}
           </div>
           <div
             className={`step__description ${
-              current && 'step__description-active'
+              current ? 'step__description-active' : ''
             }`}
           >
             {description}
@@ -38,11 +40,15 @@ const Stepper = (props) => {
         {idx !== steps.length - 1 && (
           <div className={`spacer sp-${direction}`}></div>
         )}
-      </div>
+      </li>
     );
   });
 
-  return <div className={`container ${direction}`}>{stepsJSX}</div>;
+  return (
+    <ol className={`container ${direction}`} role='group' aria-label='progress'>
+      {stepsJSX}
+    </ol>
+  );
 };
 
 export default Stepper;
