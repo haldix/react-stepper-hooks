@@ -16,6 +16,7 @@ function App() {
 
   return (
     <div className='main-cont'>
+      <h1>Stepper Component in React</h1>
       <Stepper
         direction='horiz'
         currentStep={currentStep}

@@ -28,11 +28,12 @@ body {
   }
 
   button {
+    cursor: pointer;
     display: inline-block;
     padding: 0 0.8em;
     margin: 1rem;
     border-radius: 0.3em;
-    background-color: red;
+    background-color: rgb(255, 25, 25);
     text-transform: uppercase;
     border: none;
     transition: all 0.3s ease-in;
