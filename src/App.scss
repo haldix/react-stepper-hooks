@@ -11,18 +11,26 @@
 }
 
 body {
-  margin: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.main-cont {
+  margin: 2rem auto;
+  max-width: 1000px;
   font-family: Arial, sans-serif;
   @include flex-center;
   flex-direction: column;
 }
 
 .buttons-container {
-  @include flex-center;
+  .chevron {
+    font-size: 3rem;
+  }
 
   button {
-    margin: 0 2rem;
-    padding: 0.3em 0.5em;
+    display: inline-block;
+    padding: 0 0.8em;
+    margin: 1rem;
     border-radius: 0.3em;
     background-color: red;
     text-transform: uppercase;

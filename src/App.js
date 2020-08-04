@@ -15,13 +15,20 @@ function App() {
   };
 
   return (
-    <>
-      <div className='stepper-container vertical'>
-        <Stepper
-          direction='horiz'
-          currentStep={currentStep}
-          stepsData={stepsArray}
-        />
+    <div className='main-cont'>
+      <Stepper
+        direction='horiz'
+        currentStep={currentStep}
+        stepsData={stepsArray}
+      />
+
+      <div className='buttons-container'>
+        <button onClick={() => handleClick()}>
+          <span className='chevron'>&lsaquo;</span>
+        </button>
+        <button onClick={() => handleClick('next')}>
+          <span className='chevron'>&rsaquo;</span>
+        </button>
       </div>
 
       <Stepper
@@ -29,12 +36,7 @@ function App() {
         currentStep={currentStep}
         stepsData={stepsArray}
       />
-
-      <div className='buttons-container'>
-        <button onClick={() => handleClick()}>Previous</button>
-        <button onClick={() => handleClick('next')}>Next</button>
-      </div>
-    </>
+    </div>
   );
 }
 
@@ -42,9 +44,9 @@ export default App;
 
 const stepsArray = [
   'Create your account',
-  'Add personal info',
+  //'Add personal info',
   'Add payment details',
   'Complete registration',
-  'Registration complete',
+  //'Registration complete',
   'Login',
 ];

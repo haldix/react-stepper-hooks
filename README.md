@@ -1,7 +1,7 @@
 # React Stepper with Hooks
 
-- horizontal or verical display
-- adjustble number of steps
+- horizontal or verical display.
+- adjustble number of steps which are inserted as props.
 
 ---
 

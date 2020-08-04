@@ -1,3 +1,5 @@
+$step-size: 3rem;
+
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -5,20 +7,27 @@
 }
 
 .container {
+  display: inline-block;
   background-color: #f1f1f1;
   padding: 1.5rem;
   border: 1px solid gray;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
   border-radius: 0.4rem;
   margin: 2rem;
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.horiz .step-cont {
+  display: flex;
 }
 
 .container.horiz {
-  display: inline-block;
+  justify-content: space-between;
 }
 
 .container.vert {
-  display: flex;
+  flex-direction: column;
 }
 
 .step {
@@ -26,11 +35,11 @@
 
   &__number {
     @include flex-center;
-    height: 3rem;
-    width: 3rem;
+    height: $step-size;
+    width: $step-size;
     margin: 0 auto 1rem;
     border-radius: 50%;
-    border: 1px solid grey;
+    border: 1px solid #838383;
     color: #333;
 
     &-selected {
@@ -38,15 +47,11 @@
       border: 1px solid #bdbdbd;
       color: #fff;
     }
-
-    &-disabled {
-      border: 1px solid #838383;
-    }
   }
 
   &__description {
     width: 13ch;
-    height: 3rem;
+    height: $step-size;
     text-align: center;
 
     &-active {
@@ -55,42 +60,32 @@
   }
 }
 
+.vert .step {
+  width: auto;
+  display: flex;
+
+  &__number {
+    margin: 0 0.5rem 0 0;
+  }
+}
+
 .vert .step__description {
   @include flex-center;
 }
 
-.steps-cont,
-.descriptions-cont {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.steps-cont {
-  align-items: start;
-}
-
-.vert .steps-cont,
-.vert .descriptions-cont {
-  flex-direction: column;
-  align-items: space-between;
-  margin: 0;
-}
-
 .spacer {
   flex: 1;
-  margin: 0 -1rem;
   background-color: #555;
 }
 
 .spacer.sp-horiz {
-  margin-top: 1.5rem;
+  margin: $step-size/2 -1rem 0;
   height: 2px;
-  min-width: 6rem;
+  min-width: $step-size * 2;
 }
 
 .spacer.sp-vert {
-  min-height: 4rem;
+  min-height: $step-size * 1.2;
   width: 2px;
-  margin: 0.8rem 0;
+  margin: 0.8rem 0 0.8rem $step-size/2;
 }
